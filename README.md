@@ -54,11 +54,21 @@ const App = () => {
     email: 'john@example.com',
     age: 21,
   });
-  
-  setState({
-    name: 'Paul',
-    age: 37,
-  });
+
+  const updateUserInfo = () => {
+    setState({
+      name: 'Paul',
+      age: 37,
+    });
+  }
+
+  return (
+    <>
+      <p>{state.name} is {state.age} years old</p>
+
+      <button onClick={updateUserInfo}>Change user name and age</button>
+    </>
+  );
 };
 
 export default App;
