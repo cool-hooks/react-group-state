@@ -60,7 +60,7 @@ const App = () => {
       name: 'Paul',
       age: 37,
     });
-  }
+  };
 
   return (
     <>
