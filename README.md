@@ -12,7 +12,7 @@ Use state management style from React class components in function components
 
 ### Idea
 
-[**setState**](https://reactjs.org/docs/react-component.html#setstate/) in class components in React
+[**setState**](https://reactjs.org/docs/react-component.html#setstate) in class components in React
 
 ### Alternatives
 
