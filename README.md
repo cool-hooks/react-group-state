@@ -38,16 +38,6 @@ $ yarn add react-group-state
 
 #### Options
 
-| Name | Type   | Default | Description    |
-| ---- | ------ | ------- | -------------- |
-| url  | string | ` `     | URL to shorten |
-
-#### Returned Values
-
-| Name    | Type      | Description              |
-| ------- | --------- | ------------------------ |
-| loading | boolean   | Is data loading          |
-
 ## Example
 
 **• Use `useGroupState` Hook:**
