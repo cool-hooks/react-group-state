@@ -10,6 +10,14 @@
 
 Use state management style from React class components in function components
 
+### Idea
+
+[**setState**](https://reactjs.org/docs/react-component.html#setstate/) in class components in React
+
+### Alternatives
+
+- [react-use-state-group](https://www.npmjs.com/package/react-use-state-group/) by [chenyuwang](https://www.npmjs.com/~chenyuwang/)
+
 ## How to Install
 
 First, install the library in your project by npm:
@@ -72,6 +80,16 @@ const App = () => {
 };
 
 export default App;
+```
+
+```js
+setState(
+  ({ age }) => ({
+    name: 'Paul',
+    age: age + 16,
+  }),
+  (newState) => console.log(JSON.stringify(newState)),
+);
 ```
 
 ## License
