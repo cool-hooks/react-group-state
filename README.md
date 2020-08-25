@@ -34,9 +34,24 @@ $ yarn add react-group-state
 
 ## Getting Started
 
-### useGroupState
+• Import hook in React application file:
 
-#### Options
+```js
+import { useGroupState } from 'react-group-state';
+```
+
+#### Params
+
+| Name      | Type   | Description   |
+| --------- | ------ | ------------- |
+| **state** | object | Initial state |
+
+#### Returned Values
+
+| Name         | Type   | Description |
+| ------------ | ------ | ----------- |
+| **state**    | object | State       |
+| **setState** |        |             |
 
 ## Example
 
@@ -62,7 +77,9 @@ const App = () => {
 
   return (
     <>
-      <p>{state.name} is {state.age} years old</p>
+      <p>
+        {state.name} is {state.age} years old
+      </p>
 
       <button onClick={updateUserInfo}>Change user name and age</button>
     </>
@@ -78,7 +95,7 @@ setState(
     name: 'Paul',
     age: age + 16,
   }),
-  (newState) => console.log(JSON.stringify(newState)),
+  (newState) => console.log(JSON.stringify(newState))
 );
 ```
 
