@@ -1,12 +1,12 @@
-import { renderHook, act } from "@testing-library/react-hooks";
+import { renderHook, act } from '@testing-library/react-hooks';
 
-import { useGroupState } from "../src";
+import { useGroupState } from '../src';
 
-describe("useGroupState", () => {
-  it("should update initial state values", () => {
+describe('useGroupState', () => {
+  it('should update initial state values', () => {
     const initialState = {
-      name: "John",
-      email: "john@example.com",
+      name: 'John',
+      email: 'john@example.com',
       age: 21,
     };
 
@@ -21,8 +21,8 @@ describe("useGroupState", () => {
     });
 
     expect(state).toMatchObject({
-      name: "John",
-      email: "john@example.com",
+      name: 'John',
+      email: 'john@example.com',
       age: 37,
     });
 
@@ -32,22 +32,22 @@ describe("useGroupState", () => {
       setState(
         {
           age: 21,
-          name: "Paul",
-          email: "paul@example.com",
+          name: 'Paul',
+          email: 'paul@example.com',
         },
-        cb,
+        cb
       );
     });
 
     expect(cb).toHaveBeenCalledWith({
       age: 21,
-      name: "Paul",
-      email: "paul@example.com",
+      name: 'Paul',
+      email: 'paul@example.com',
     });
 
     expect(state).toMatchObject({
-      name: "Paul",
-      email: "paul@example.com",
+      name: 'Paul',
+      email: 'paul@example.com',
       age: 21,
     });
 
@@ -56,8 +56,8 @@ describe("useGroupState", () => {
     });
 
     expect(state).toMatchObject({
-      name: "Paul",
-      email: "paul@example.com",
+      name: 'Paul',
+      email: 'paul@example.com',
       age: 21,
     });
 
@@ -66,8 +66,8 @@ describe("useGroupState", () => {
     });
 
     expect(state).toMatchObject({
-      name: "Paul",
-      email: "paul@example.com",
+      name: 'Paul',
+      email: 'paul@example.com',
       age: 41,
     });
   });
