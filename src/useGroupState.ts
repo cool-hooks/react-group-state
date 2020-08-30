@@ -6,23 +6,25 @@ export function useGroupState<T extends object>(group: T) {
   const updateState = useCallback(
     (
       data: Partial<T> | ((state: T) => Partial<T>),
-      // data: Partial<T> | ((state: T) => Partial<T>),
       callback?: (state: T) => void
     ) => {
       const updatedState = state;
 
-      // TODO fix if data is function
-      (Object.keys(data) as Array<keyof T>).map((key) => {
-        if (Object.prototype.hasOwnProperty.call(updatedState, key)) {
-          updatedState[key] = data[key];
+      const mergeState = (data: Partial<T>) => {
+        (Object.keys(data) as Array<keyof T>).map((key) => {
+          if (Object.prototype.hasOwnProperty.call(updatedState, key)) {
+            updatedState[key] = data[key] as T[keyof T];
+          }
+        });
+
+        setState(updatedState);
+
+        if (callback) {
+          callback(updatedState);
         }
-      });
+      };
 
-      setState(updatedState);
-
-      if (callback) {
-        callback(updatedState);
-      }
+      mergeState(typeof data === 'function' ? data(state) : data);
     },
     [state]
   );

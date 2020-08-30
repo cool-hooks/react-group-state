@@ -62,10 +62,7 @@ describe("useGroupState", () => {
     });
 
     act(() => {
-      setState(
-        ({ age }) => ({ age: age + 20 }),
-        // (x) => console.log(x),
-      );
+      setState(({ age }) => ({ age: age + 20 }));
     });
 
     expect(state).toMatchObject({
