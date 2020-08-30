@@ -1,17 +1,33 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
-type Setters<T extends {}> = {
-  [K in keyof T]: (value: T[K]) => void;
-};
-
-export function useGroupState<T extends {}>(group: T): [T, Setters<T>] {
+export function useGroupState<T extends object>(group: T) {
   const [state, setState] = useState(group);
 
-  const setters = {};
+  const updateState = useCallback(
+    (
+      data: Partial<T> | ((state: T) => Partial<T>),
+      callback?: (state: T) => void
+    ) => {
+      const updatedState = state;
 
-  Object.keys(group).map((item) => {
-    setState((state: T) => ({ ...state, item }));
-  });
+      const mergeState = (data: Partial<T>) => {
+        (Object.keys(data) as Array<keyof T>).map((key) => {
+          if (Object.prototype.hasOwnProperty.call(updatedState, key)) {
+            updatedState[key] = data[key] as T[keyof T];
+          }
+        });
 
-  return [state, setters as Setters<T>];
+        setState(updatedState);
+
+        if (callback) {
+          callback(updatedState);
+        }
+      };
+
+      mergeState(typeof data === 'function' ? data(state) : data);
+    },
+    [state]
+  );
+
+  return [state, updateState] as const;
 }

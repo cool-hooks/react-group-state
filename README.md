@@ -3,12 +3,20 @@
 [![NPM version](http://img.shields.io/npm/v/react-group-state?style=flat-square)](https://www.npmjs.com/package/react-group-state)
 [![NPM downloads](http://img.shields.io/npm/dm/react-group-state?style=flat-square)](https://www.npmjs.com/package/react-group-state)
 [![NPM license](https://img.shields.io/npm/l/react-group-state?style=flat-square)](https://www.npmjs.com/package/react-group-state)
-[![Travis](https://img.shields.io/travis/cool-hooks/react-group-state?style=flat-square)](https://travis-ci.org/cool-hooks/react-group-state)
+[![Travis](https://img.shields.io/travis/cool-hooks/react-group-state/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-group-state)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-group-state?style=flat-square)](https://bundlephobia.com/result?p=react-group-state)
 
 ## About
 
 Use state management style from React class components in function components
+
+### Idea
+
+[**setState**](https://reactjs.org/docs/react-component.html#setstate) in class components in React
+
+### Alternatives
+
+- [react-use-state-group](https://www.npmjs.com/package/react-use-state-group/) by [chenyuwang](https://www.npmjs.com/~chenyuwang/)
 
 ## How to Install
 
@@ -26,19 +34,24 @@ $ yarn add react-group-state
 
 ## Getting Started
 
-### useGroupState
+• Import hook in React application file:
 
-#### Options
+```js
+import { useGroupState } from 'react-group-state';
+```
 
-| Name | Type   | Default | Description    |
-| ---- | ------ | ------- | -------------- |
-| url  | string | ` `     | URL to shorten |
+#### Params
+
+| Name      | Type   | Description   |
+| --------- | ------ | ------------- |
+| **state** | object | Initial state |
 
 #### Returned Values
 
-| Name    | Type      | Description              |
-| ------- | --------- | ------------------------ |
-| loading | boolean   | Is data loading          |
+| Name         | Type   | Description |
+| ------------ | ------ | ----------- |
+| **state**    | object | State       |
+| **setState** |        |             |
 
 ## Example
 
@@ -64,7 +77,9 @@ const App = () => {
 
   return (
     <>
-      <p>{state.name} is {state.age} years old</p>
+      <p>
+        {state.name} is {state.age} years old
+      </p>
 
       <button onClick={updateUserInfo}>Change user name and age</button>
     </>
@@ -72,6 +87,16 @@ const App = () => {
 };
 
 export default App;
+```
+
+```js
+setState(
+  ({ age }) => ({
+    name: 'Paul',
+    age: age + 16,
+  }),
+  (newState) => console.log(JSON.stringify(newState))
+);
 ```
 
 ## License
