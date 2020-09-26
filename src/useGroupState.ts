@@ -19,9 +19,7 @@ export function useGroupState<T extends object>(group: T) {
 
         setState(updatedState);
 
-        if (callback) {
-          callback(updatedState);
-        }
+        callback?.(updatedState);
       };
 
       mergeState(typeof data === 'function' ? data(state) : data);
