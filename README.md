@@ -3,7 +3,7 @@
 [![NPM version](http://img.shields.io/npm/v/react-group-state?style=flat-square)](https://www.npmjs.com/package/react-group-state)
 [![NPM downloads](http://img.shields.io/npm/dm/react-group-state?style=flat-square)](https://www.npmjs.com/package/react-group-state)
 [![NPM license](https://img.shields.io/npm/l/react-group-state?style=flat-square)](https://www.npmjs.com/package/react-group-state)
-[![Codecov](https://img.shpackage.jsonields.io/codecov/c/github/cool-hooks/react-group-state?style=flat-square)](https://codecov.io/gh/cool-hooks/react-group-state)
+[![Codecov](https://img.shields.io/codecov/c/github/cool-hooks/react-group-state?style=flat-square)](https://codecov.io/gh/cool-hooks/react-group-state)
 [![Travis](https://img.shields.io/travis/cool-hooks/react-group-state/master?style=flat-square)](https://travis-ci.org/cool-hooks/react-group-state)
 [![Bundle size](https://img.shields.io/bundlephobia/min/react-group-state?style=flat-square)](https://bundlephobia.com/result?p=react-group-state)
 
