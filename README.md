@@ -58,7 +58,7 @@ import { useGroupState } from 'react-group-state';
 
 **• Use `useGroupState` Hook:**
 
-```js
+```jsx
 import React from 'react';
 import { useGroupState } from 'react-group-state';
 
