@@ -49,10 +49,10 @@ import { useGroupState } from 'react-group-state';
 
 #### Returned Values
 
-| Name         | Type   | Description |
-| ------------ | ------ | ----------- |
-| **state**    | object | State       |
-| **setState** |        |             |
+| Name         | Type                                                   | Description                                                                                                                                                                                       |
+| ------------ | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **state**    | object                                                 | State                                                                                                                                                                                             |
+| **setState** | (object or ((prevState) => object, (newState) => void) | Function to set new state. Can be called with passed new object, function where parameter is previous state, or with callback as second parameter where value passed to function is updated state |
 
 ## Example
 
