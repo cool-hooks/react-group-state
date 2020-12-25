@@ -1,6 +1,6 @@
 {
   "name": "react-group-state",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
   "description": "Use state management style from React class components in function components",
   "author": "Jakub Biesiada",
   "license": "MIT",
