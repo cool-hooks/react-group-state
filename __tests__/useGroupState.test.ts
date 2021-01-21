@@ -20,7 +20,7 @@ describe('useGroupState', () => {
       setState({ age: 37 });
     });
 
-    expect(state).toMatchObject({
+    expect(state).toEqual({
       name: 'John',
       email: 'john@example.com',
       age: 37,
@@ -45,7 +45,7 @@ describe('useGroupState', () => {
       email: 'paul@example.com',
     });
 
-    expect(state).toMatchObject({
+    expect(state).toEqual({
       name: 'Paul',
       email: 'paul@example.com',
       age: 21,
@@ -55,7 +55,7 @@ describe('useGroupState', () => {
       setState({});
     });
 
-    expect(state).toMatchObject({
+    expect(state).toEqual({
       name: 'Paul',
       email: 'paul@example.com',
       age: 21,
@@ -65,7 +65,7 @@ describe('useGroupState', () => {
       setState(({ age }) => ({ age: age + 20 }));
     });
 
-    expect(state).toMatchObject({
+    expect(state).toEqual({
       name: 'Paul',
       email: 'paul@example.com',
       age: 41,
