@@ -19,7 +19,7 @@ export function useGroupState<T extends object>(group: T) {
           }
         });
 
-        setState(updatedState);
+        setState((prevState) => ({ ...prevState, ...updatedState }));
 
         callback?.(updatedState);
       };
