@@ -71,4 +71,24 @@ describe('useGroupState', () => {
       age: 41,
     });
   });
+
+  it('should not add field not existing in initial state', () => {
+    const initialState = {
+      name: 'John',
+      email: 'john@example.com',
+      age: 21,
+    };
+
+    const { result } = renderHook(() => useGroupState<any>(initialState));
+
+    const [state, setState] = result.current;
+
+    expect(state).toBe(initialState);
+
+    act(() => {
+      setState({ time: 12 });
+    });
+
+    expect(state).toBe(initialState);
+  });
 });
