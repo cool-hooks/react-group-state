@@ -15,6 +15,10 @@ Use state management style from React class components in function components
 
 [**setState**](https://reactjs.org/docs/react-component.html#setstate) in class components in React
 
+### Demo
+
+**[Playground – play with library in CodeSandbox](https://codesandbox.io/s/react-group-state-q4iss)**
+
 ### Alternatives
 
 - [react-use-state-group](https://www.npmjs.com/package/react-use-state-group/) by [chenyuwang](https://www.npmjs.com/~chenyuwang/)
