@@ -15,13 +15,13 @@ Use state management style from React class components in function components
 
 [**setState**](https://reactjs.org/docs/react-component.html#setstate) in class components in React
 
+### Demo
+
+<!-- TODO -->
+
 ### Alternatives
 
 - [react-use-state-group](https://www.npmjs.com/package/react-use-state-group/) by [chenyuwang](https://www.npmjs.com/~chenyuwang/)
-
-## Demo
-
-<!-- TODO -->
 
 ## How to Install
 
