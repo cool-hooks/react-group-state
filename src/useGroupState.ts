@@ -19,6 +19,7 @@ export function useGroupState<T extends object>(group: T) {
           }
         });
 
+        // TODO check if state changed
         setState({ ...updatedState });
 
         callback?.(updatedState);
