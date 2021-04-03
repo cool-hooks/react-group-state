@@ -17,7 +17,7 @@ Use state management style from React class components in function components
 
 ### Demo
 
-<!-- TODO -->
+**[Playground – play with library in CodeSandbox](https://codesandbox.io/s/react-group-state-q4iss)**
 
 ### Alternatives
 
