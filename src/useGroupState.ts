@@ -14,6 +14,7 @@ export function useGroupState<T extends object>(
   group: T,
   options?: typeof defaultOptions
 ) {
+  // TODO add logic for options
   const { extendable, strict } = {
     ...defaultOptions,
     ...options,
@@ -23,7 +24,7 @@ export function useGroupState<T extends object>(
 
   const updateState = useCallback<UpdateStateCallback<T>>(
     (data, callback) => {
-      const updatedState = state;
+      const updatedState = state; // TODO? replace with prev state
 
       const mergeState = (data: Partial<T>) => {
         (Object.keys(data) as Array<keyof T>).map((key) => {
