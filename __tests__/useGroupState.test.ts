@@ -2,6 +2,7 @@ import { renderHook, act } from '@testing-library/react-hooks';
 
 import { useGroupState } from '../src';
 
+// TODO cover all test cases
 describe('useGroupState', () => {
   it('should update initial state values', () => {
     const initialState = {

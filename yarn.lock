@@ -840,10 +840,10 @@
   dependencies:
     "@types/node" ">= 8"
 
-"@rollup/plugin-node-resolve@^11.2.1":
-  version "11.2.1"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-11.2.1.tgz#82aa59397a29cd4e13248b106e6a4a1880362a60"
-  integrity sha512-yc2n43jcqVyGE2sqV5/YCmocy9ArjVAP/BeXyTtADTBBX6V0e5UMqwO8CdQ0kzjb6zu5P1qMzsScCMRvE9OlVg==
+"@rollup/plugin-node-resolve@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-13.0.0.tgz#352f07e430ff377809ec8ec8a6fd636547162dc4"
+  integrity sha512-41X411HJ3oikIDivT5OKe9EZ6ud6DXudtfNrGbC4nniaxx2esiWjkLOzgnZsWq1IM8YIeL2rzRGLZLBjlhnZtQ==
   dependencies:
     "@rollup/pluginutils" "^3.1.0"
     "@types/resolve" "1.17.1"
@@ -1073,10 +1073,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^26.0.22":
-  version "26.0.22"
-  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.22.tgz#8308a1debdf1b807aa47be2838acdcd91e88fbe6"
-  integrity sha512-eeWwWjlqxvBxc4oQdkueW5OF/gtfSceKk4OnOAGlUSwS/liBRtZppbJuz1YkgbrbfGOoeBHun9fOvXnjNwrSOw==
+"@types/jest@^26.0.23":
+  version "26.0.23"
+  resolved "https://registry.yarnpkg.com/@types/jest/-/jest-26.0.23.tgz#a1b7eab3c503b80451d019efb588ec63522ee4e7"
+  integrity sha512-ZHLmWMJ9jJ9PTiT58juykZpL7KjwJywFN3Rr2pTSkyQfydf/rk22yS7W8p5DaVUMQ2BQC7oYiU3FjbTM/mYrOA==
   dependencies:
     jest-diff "^26.0.0"
     pretty-format "^26.0.0"
@@ -1138,10 +1138,19 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/react@>=16.9.0", "@types/react@^17.0.3":
+"@types/react@>=16.9.0":
   version "17.0.3"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.3.tgz#ba6e215368501ac3826951eef2904574c262cc79"
   integrity sha512-wYOUxIgs2HZZ0ACNiIayItyluADNbONl7kt8lkLjVK8IitMH5QMyAh75Fwhmo37r1m7L2JaFj03sIfxBVDvRAg==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.8":
+  version "17.0.8"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.8.tgz#fe76e3ba0fbb5602704110fd1e3035cf394778e3"
+  integrity sha512-3sx4c0PbXujrYAKwXxNONXUtRp9C+hE2di0IuxFyf5BELD+B+AXL8G7QrmSKhVwKZDbv0igiAjQAMhXj8Yg3aw==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -7481,10 +7490,10 @@ prettier@^1.18.2:
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.19.1.tgz#f7d7f5ff8a9cd872a7be4ca142095956a60797cb"
   integrity sha512-s7PoyDv/II1ObgQunCbB9PdLmUcBZcnWOcxDh7O0N/UwDEsHyqkW+Qh28jW+mVuCdx7gLB0BotYI1Y6uI9iyew==
 
-prettier@^2.2.1:
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
-  integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
+prettier@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-2.3.0.tgz#b6a5bf1284026ae640f17f7ff5658a7567fc0d18"
+  integrity sha512-kXtO4s0Lz/DW/IJ9QdWhAf7/NmPWQXkFr/r/WkR3vyI+0v8amTDxiaQSLzs8NBlytfLWX/7uQUMIW677yLKl4w==
 
 pretty-format@^25.5.0:
   version "25.5.0"
@@ -7544,7 +7553,7 @@ promzard@^0.3.0:
   dependencies:
     read "1"
 
-prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -7666,15 +7675,14 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-dom@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.1.tgz#c1bd37331a0486c078ee54c4740720993b2e0e7f"
-  integrity sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
+react-dom@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
+  integrity sha512-s4h96KtLDUQlsENhMn1ar8t2bEa+q/YAtj8pPPdIjPDGBDIVNsrD9aXNWqspUe6AzKCIG0C1HZZLqLV7qpOBGA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    prop-types "^15.6.2"
-    scheduler "^0.19.1"
+    scheduler "^0.20.2"
 
 react-error-boundary@^3.1.0:
   version "3.1.1"
@@ -7716,14 +7724,13 @@ react-test-renderer@^17.0.2:
     react-shallow-renderer "^16.13.1"
     scheduler "^0.20.2"
 
-react@^16.13.1:
-  version "16.13.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
-  integrity sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
+react@^17.0.2:
+  version "17.0.2"
+  resolved "https://registry.yarnpkg.com/react/-/react-17.0.2.tgz#d0b5cc516d29eb3eee383f75b62864cfb6800037"
+  integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
-    prop-types "^15.6.2"
 
 read-cmd-shim@^1.0.1, read-cmd-shim@^1.0.5:
   version "1.0.5"
@@ -8248,14 +8255,6 @@ saxes@^5.0.0:
   dependencies:
     xmlchars "^2.2.0"
 
-scheduler@^0.19.1:
-  version "0.19.1"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.1.tgz#4f3e2ed2c1a7d65681f4c854fa8c5a1ccb40f196"
-  integrity sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-
 scheduler@^0.20.2:
   version "0.20.2"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.2.tgz#4baee39436e34aa93b4874bddcbf0fe8b8b50e91"
@@ -8280,10 +8279,10 @@ semantic-release-gitmoji@^1.3.4:
     lodash.uniq "^4.5.0"
     node-emoji "^1.10.0"
 
-semantic-release@^17.4.2:
-  version "17.4.2"
-  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.2.tgz#b5147b5a629c227b7074ad4cc89920a14cb08c96"
-  integrity sha512-TPLWuoe2L2DmgnQEh+OLWW5V1T+ZAa1xWuHXsuPAWEko0BqSdLPl+5+BlQ+D5Bp27S5gDJ1//Y1tgbmvUhnOCw==
+semantic-release@^17.4.3:
+  version "17.4.3"
+  resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-17.4.3.tgz#e01b2d0c0adaf5a6cc427359f1df755d1e908927"
+  integrity sha512-lTOUSrkbaQ+TRs3+BmtJhLtPSyiO7iTGmh5SyuEFqNO8HQbQ4nzXg4UlPrDQasO/C0eFK/V0eCbOzJdjtKBOYw==
   dependencies:
     "@semantic-release/commit-analyzer" "^8.0.0"
     "@semantic-release/error" "^2.2.0"
@@ -8301,7 +8300,7 @@ semantic-release@^17.4.2:
     git-log-parser "^1.2.0"
     hook-std "^2.0.0"
     hosted-git-info "^4.0.0"
-    lodash "^4.17.15"
+    lodash "^4.17.21"
     marked "^2.0.0"
     marked-terminal "^4.1.1"
     micromatch "^4.0.2"
