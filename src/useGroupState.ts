@@ -1,14 +1,27 @@
 import { useState, useCallback } from 'react';
 
-type UpdateStateCallbackParams<T> = (
+type UpdateStateCallback<T> = (
   data: Partial<T> | ((state: T) => Partial<T>),
   callback?: (state: T) => void
 ) => void;
 
-export function useGroupState<T extends object>(group: T) {
+const defaultOptions = {
+  extendable: false, // new fields
+  strict: true, // other types for field
+};
+
+export function useGroupState<T extends object>(
+  group: T,
+  options?: typeof defaultOptions
+) {
+  const { extendable, strict } = {
+    ...defaultOptions,
+    ...options,
+  };
+
   const [state, setState] = useState(group);
 
-  const updateState = useCallback<UpdateStateCallbackParams<T>>(
+  const updateState = useCallback<UpdateStateCallback<T>>(
     (data, callback) => {
       const updatedState = state;
 
