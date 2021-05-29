@@ -51,6 +51,8 @@ import { useGroupState } from 'react-group-state';
 | --------- | ------ | ------------- |
 | **state** | object | Initial state |
 
+<!-- TODO add options -->
+
 #### Returned Values
 
 | Name         | Type                                                  | Description                                                                                                                                                                                        |

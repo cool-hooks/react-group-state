@@ -24,11 +24,11 @@
     "url": "https://github.com/cool-hooks/react-group-state.git"
   },
   "keywords": [
-    "state",
-    "group",
     "react",
+    "hooks",
     "management",
-    "hooks"
+    "state",
+    "group"
   ],
   "bugs": {
     "url": "https://github.com/cool-hooks/react-group-state/issues"
@@ -85,6 +85,5 @@
       "npm run prettier",
       "npm run lint"
     ]
-  },
-  "dependencies": {}
+  }
 }
