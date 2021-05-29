@@ -34,6 +34,7 @@ export function useGroupState<T extends object>(
         });
 
         setState((prevState) => ({ ...prevState, ...updatedState }));
+        // setState({ ...updatedState });
 
         callback?.(updatedState);
       };
