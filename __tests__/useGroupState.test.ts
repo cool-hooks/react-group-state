@@ -92,4 +92,8 @@ describe('useGroupState', () => {
 
     expect(state).toBe(initialState);
   });
+
+  it.todo('should extend default object structure');
+  it.todo('should strict');
+  it.todo('should overwrite schema');
 });

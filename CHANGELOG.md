@@ -2,6 +2,6 @@
 
 ## 1.0.0 (Soon)
 
-#### New Feature
+### New Feature
 
-- added `useGroupState` hook
+- added the `useGroupState` hook

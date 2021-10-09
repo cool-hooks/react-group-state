@@ -6,8 +6,10 @@ type UpdateStateCallback<T> = (
 ) => void;
 
 const defaultOptions = {
-  extendable: false, // new fields
-  strict: true, // other types for field
+  extendable: true, // new fields
+  strict: false, // other types for field
+  overwrite: false,
+  // fallback: undefined, // -> fallback for overwrite
 };
 
 export function useGroupState<T extends object>(
@@ -15,7 +17,7 @@ export function useGroupState<T extends object>(
   options?: typeof defaultOptions
 ) {
   // TODO add logic for options
-  const { extendable, strict } = {
+  const { extendable, strict, overwrite } = {
     ...defaultOptions,
     ...options,
   };
@@ -23,25 +25,40 @@ export function useGroupState<T extends object>(
   const [state, setState] = useState(group);
 
   const updateState = useCallback<UpdateStateCallback<T>>(
-    (data, callback) => {
+    (data, callback, _options) => {
       const updatedState = state; // TODO? replace with prev state
 
       const mergeState = (data: Partial<T>) => {
         (Object.keys(data) as Array<keyof T>).map((key) => {
-          if (Object.prototype.hasOwnProperty.call(updatedState, key)) {
-            updatedState[key] = data[key] as T[keyof T];
+          if (
+            extendable ||
+            (!extendable &&
+              Object.prototype.hasOwnProperty.call(updatedState, key))
+          ) {
+            // TODO compare objects/arrays/etc
+            if (
+              !strict ||
+              (strict && typeof updatedState[key] === typeof data[key])
+            ) {
+              updatedState[key] = data[key] as T[keyof T];
+            }
           }
         });
 
-        setState((prevState) => ({ ...prevState, ...updatedState }));
-        // setState({ ...updatedState });
+        setState((prevState) => {
+          if (overwrite) {
+            return data;
+          }
+
+          return { ...prevState, ...updatedState };
+        });
 
         callback?.(updatedState);
       };
 
       mergeState(typeof data === 'function' ? data(state) : data);
     },
-    [state]
+    [extendable, overwrite, state, strict]
   );
 
   return [state, updateState] as const;
